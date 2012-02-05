@@ -1,20 +1,24 @@
-h1,h2 {
+@font-face {
+  font-family: 'Kingthings';
+  src: url('Kingthings_Calligraphica_2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,h2,h3 {
+	font-family: Kingthings;
+}
+
+h1, h2 {
 	text-align: center;
+}
+
+h1 {
+	text-shadow: gray 2px 1px 2px;
 }
 
 section {
   padding-top: 80px
-}
-
-aside {
-	float:none;
-	border: 2px solid black;
-	padding-left:6px;
-	padding-right:6px;
-	width:90%;
-	margin:8px;
-	margin-left:auto;
-	margin-right:auto;
 }
 
 section.chapter {
@@ -32,12 +36,6 @@ dt.key {
 
 dt.secret {
 	
-}
-
-.float {
-	float:right;
-	width:30%;
-	margin-left:6px;
 }
 
 caption {
