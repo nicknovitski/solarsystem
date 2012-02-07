@@ -2,9 +2,12 @@
   .navbar-inner
     .container
       %a.brand{:href => "#"}<
-        %img{:alt => "The Solar System", :height => "50", :src => "img/sslogo50px.png", :width => "120"}/
+        - if @chapter.sections.nil?
+          %img{:alt => "The Solar System", :height => "50", :src => "img/sslogo50px.png", :width => "120"}/
+        - else
+          = title
 
-      %ul.nav.span10
+      %ul.nav
         - if @chapter.sections.nil?
           - @chapters.each do |c|
             %li{:class=>c==@chapter ? "active" : nil }
@@ -13,6 +16,3 @@
           - @chapter.sections.each do |section|
             %li<
               %a{:href=>'#'+section.snake_case}= section
-          %li<
-            %a{:href => "http://creativecommons.org/licenses/by/3.0/", :rel => "license"}
-              %img{:alt => "Creative Commons License", :height => "15", :src => "http://i.creativecommons.org/l/by/3.0/80x15.png", :style => "border-width:0", :width => "80"}/
