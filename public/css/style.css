@@ -9,7 +9,7 @@ h1,h2,h3 {
 	font-family: Kingthings;
 }
 
-h1, h2 {
+header, h1, h2 {
 	text-align: center;
 }
 
@@ -18,12 +18,7 @@ h1 {
 }
 
 section {
-  padding-top: 80px
-}
-
-section.chapter {
-   border-bottom: 4px inset #999;
-   padding-bottom:30px;
+    padding-top: 80px
 }
 
 dt.skill {

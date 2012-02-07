@@ -1,0 +1,9 @@
+%ul.pager.span9
+  - if @page_left
+    %li.previous
+      %a{:href=>@page_left.snake_case}
+        &larr; #{@page_left}
+  - if @page_right
+    %li.next
+      %a{:href=>@page_right.snake_case}
+        #{@page_right} &rarr;

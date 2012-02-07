@@ -1,0 +1,5 @@
+= haml :_navbar
+.container-fluid
+  .row-fluid.hyphenate
+    = haml ("_"+@chapter.name.snake_case).to_sym
+    = haml :_pager

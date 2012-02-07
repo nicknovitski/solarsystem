@@ -1,263 +1,250 @@
-!!!
-%html{:lang => "en-US"}
-  %head
-    %meta{:content => "text/html; charset=us-ascii", "http-equiv" => "Content-Type"}/
-    %link{:href => "/img/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}/
-    %link{:href => "css/bootstrap.min.css", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "css/style.css", :rel => "stylesheet", :type => "text/css"}/
-    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", :type => "text/javascript"}
-    %script{:src => "js/bootstrap-dropdown.js", :type => "text/javascript"}
-    %script{:src => "js/bootstrap-scrollspy.js", :type => "text/javascript"}
-    %script{:src => "js/hyphenate.js", :type => "text/javascript"}
-    %title The Solar System
-  %body{"data-spy" => "scroll", "data-target" => ".navbar"}
-    #navbar.navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.brand{:href => "#"}<
-            %img{:alt => "The Solar System", :height => "50", :src => "img/sslogo50px.png", :width => "120"}/
-          %ul.nav.span10
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Starting a Game
-                %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a{:href => "#starting_a_game"} Introduction
-                %li<
-                  %a{:href => "#choosing_a_setting"} Choosing a Setting
-                %li<
-                  %a{:href => "#focal_points"} Focal Points
-                %li<
-                  %a{:href => "#overview_of_the_game"} Overview of the Game
-                %li<
-                  %a{:href => "#introducing_crunch"} Introducing Crunch
-                %li<
-                  %a{:href => "#initial_crunch"} Initial Crunch
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}<
-                Character Creation
-                %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a{:href => "#character_creation"} Introduction
-                %li<
-                  %a{:href => "#abilities"} Abilities
-                %li<
-                  %a{:href => "#heroic_event"} Heroic Event
-                %li<
-                  %a{:href => "#character_background"} Character Background
-                %li<
-                  %a{:href => "#cultural_identity"} Cultural Identity
-                %li<
-                  %a{:href => "#passive_abilities"} Passive Abilities
-                %li<
-                  %a{:href => "#dividing_pools"} Dividing Pools
-                %li<
-                  %a{:href => "#choosing_secrets_and_keys"} Choosing Secrets and Keys
-                %li<
-                  %a{:href => "#finalizing_the_character"} Finalizing the character
-                %li<
-                  %a{:href => "#initial_situation"} Initial Situation
-                %li<
-                  %a{:href => "#player_character_party"} Player character party
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Playing the Game
-                %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a{:href => "#playing_the_game"} Introduction
-                %li<
-                  %a{:href => "#starting_up_the_session"} Starting up the session
-                %li<
-                  %a{:href => "#scenes"} Scenes
-                %li<
-                  %a{:href => "#tasks_in_free_play"} Tasks in Free Play
-                %li<
-                  %a{:href => "#choice_as_content"} Choice as Content
-                %li<
-                  %a{:href => "#conflicts"} Conflicts
-                %li<
-                  %a{:href => "#consequences"} Consequences
-                %li<
-                  %a{:href => "#pool_refreshment"} Pool Refreshment
-                %li<
-                  %a{:href => "#harm"} Harm
-                %li<
-                  %a{:href => "#birds_eye_view"} Bird's Eye View
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Ability Check
-                %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a{:href => "#ability_check"} Introduction
-                %li<
-                  %a{:href => "#timing_and_stakes"} Timing and stakes
-                %li<
-                  %a{:href => "#narrating_success"} Narrating success
-                %li<
-                  %a{:href => "#no_suitable_ability"} No suitable Ability?
-                %li<
-                  %a{:href => "#bonus_and_penalty_dice"} Bonus and penalty dice
-                %li<
-                  %a{:href => "#circumstance_penalties"} Circumstance penalties
-                %li<
-                  %a{:href => "#supporting_a_check"} Supporting a check
-                %li<
-                  %a{:href => "#recording_effects"} Recording Effects
-                %li<
-                  %a{:href => "#using_effects"} Using Effects
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Conflict Resolution
-                %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a{:href => "#conflict_resolution"} Introduction
-                %li<
-                  %a{:href => "#initiating_conflict"} Initiating conflict
-                %li<
-                  %a{:href => "#conflict_stakes"} Conflict stakes
-                %li<
-                  %a{:href => "#leverage_propriety_and_scope"} Leverage, propriety and scope
-                %li<
-                  %a{:href => "#selecting_abilities"} Selecting Abilities
-                %li<
-                  %a{:href => "#resolving_the_conflict"} Resolving the conflict
-                %li<
-                  %a{:href => "#ability_checks_in_conflict"} Ability checks in conflict
-                %li<
-                  %a{:href => "#several_characters_in_conflict"} Several characters in conflict
-                %li<
-                  %a{:href => "#solo_conflicts"} Solo conflicts
-                %li<
-                  %a{:href => "#secondary_characters_in_conflict"} Secondary characters in conflict
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Extended Conflict
-                %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a{:href => "#extended_conflict"} Introduction
-                %li<
-                  %a{:href => "#why_extend"} Why extend?
-                %li<
-                  %a{:href => "#scope_and_stakes_in_extended_conflict"} Scope and stakes in extended conflict
-                %li<
-                  %a{:href => "#negotiation_phase"} Negotiation phase
-                %li<
-                  %a{:href => "#the_defensive_action"} The defensive action
-                %li<
-                  %a{:href => "#resolving_actions"} Resolving actions
-                %li<
-                  %a{:href => "#rolling_a_tie"} Rolling a tie
-                %li<
-                  %a{:href => "#ending_a_round"} Ending a round
-                %li<
-                  %a{:href => "#special_actions"} Special actions
-                %li<
-                  %a{:href => "#multiple_characters_in_extended_conflict"} Multiple characters in extended conflict
-                %li<
-                  %a{:href => "#against_effects"} Against Effects
-                %li<
-                  %a{:href => "#strategy_in_extended_conflict"} Strategy in Extended Conflict
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Keys and Experience
-                %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a{:href => "#keys_and_experience"} Introduction
-                %li<
-                  %a{:href => "#gaining_and_using_advances"} Gaining and Using Advances
-                %li<
-                  %a{:href => "#advance_debt"} Advance Debt
-                %li<
-                  %a{:href => "#losing_benefits"} Losing Benefits
-                %li<
-                  %a{:href => "#transcendence"} Transcendence
-                %li<
-                  %a{:href => "#wrapping_up_the_campaign"} Wrapping up the campaign
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Secrets and Crunch
-                %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a{:href => "#secrets_and_crunch"} Introduction
-                %li<
-                  %a{:href => "#learning_secrets"} Learning Secrets
-                %li<
-                  %a{:href => "#developing_new_secrets"} Developing new Secrets
-                %li<
-                  %a{:href => "#advanced_crunch"} Advanced Crunch
-                %li<
-                  %a{:href => "#equipment_ratings"} Equipment ratings
-                %li<
-                  %a{:href => "#drugs"} Drugs
-                %li<
-                  %a{:href => "#werewolves"} Werewolves
-                %li<
-                  %a{:href => "#martial_arts"} Martial Arts
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Story Guide
-                %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a{:href => "#story_guide"} Introduction
-                %li<
-                  %a{:href => "#preparing_for_play"} Preparing for play
-                %li<
-                  %a{:href => "#elements_of_preparation"} Elements of Preparation
-                %li<
-                  %a{:href => "#adventure_map"} Adventure map
-                %li<
-                  %a{:href => "#framing_scenes"} Framing Scenes
-                %li<
-                  %a{:href => "#secondary_characters"} Secondary Characters
-                %li<
-                  %a{:href => "#running_conflicts"} Running Conflicts
-                %li<
-                  %a{:href => "#rules_arbitration"} Rules Arbitration
-                %li<
-                  %a{:href => "#running_a_campaign"} Running a Campaign
-            %li
-              %a{:href => "#afterword"} Afterword
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Appendices & Extras
-                %b.caret>
-              %ul.dropdown-menu
-                %li<
-                  %a{:href => "#example_abilities"} Example Abilities
-                %li<
-                  %a{:href => "#example_keys"} Example Keys
-                %li<
-                  %a{:href => "#example_secrets"} Example Secrets
-                %li.divider
-                %li<
-                  %a{:href => "pdf/ss_character_sheet.pdf"} Character Sheet
-                %li<
-                  %a{:href => "mailto:nicknovitski@gmail.com?subject=Solar%20System%20SRD"} Question or Correction
-            %li
-              %a{:href => "http://creativecommons.org/licenses/by/3.0/", :rel => "license"}
-                %img{:alt => "Creative Commons License", :height => "15", :src => "http://i.creativecommons.org/l/by/3.0/80x15.png", :style => "border-width:0", :width => "80"}/
-    .container-fluid
-      .row-fluid.hyphenate
-        = haml :_ss_foreword
-        = haml :_ss_ch1
-        = haml :_ss_ch2
-        = haml :_ss_ch3
-        = haml :_ss_ch4
-        = haml :_ss_ch5
-        = haml :_ss_ch6
-        = haml :_ss_ch7
-        = haml :_ss_ch8
-        = haml :_ss_ch9
-        = haml :_afterword
-        = haml :_ss_exampleabilities
-        = haml :_ss_examplekeys
-        = haml :_ss_examplesecrets
+#navbar.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a.brand{:href => "#"}<
+        %img{:alt => "The Solar System", :height => "50", :src => "img/sslogo50px.png", :width => "120"}/
+      %ul.nav.span10
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Starting a Game
+            %b.caret>
+          %ul.dropdown-menu
+            %li<
+              %a{:href => "#starting_a_game"} Introduction
+            %li<
+              %a{:href => "#choosing_a_setting"} Choosing a Setting
+            %li<
+              %a{:href => "#focal_points"} Focal Points
+            %li<
+              %a{:href => "#overview_of_the_game"} Overview of the Game
+            %li<
+              %a{:href => "#introducing_crunch"} Introducing Crunch
+            %li<
+              %a{:href => "#initial_crunch"} Initial Crunch
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}<
+            Character Creation
+            %b.caret>
+          %ul.dropdown-menu
+            %li<
+              %a{:href => "#character_creation"} Introduction
+            %li<
+              %a{:href => "#abilities"} Abilities
+            %li<
+              %a{:href => "#heroic_event"} Heroic Event
+            %li<
+              %a{:href => "#character_background"} Character Background
+            %li<
+              %a{:href => "#cultural_identity"} Cultural Identity
+            %li<
+              %a{:href => "#passive_abilities"} Passive Abilities
+            %li<
+              %a{:href => "#dividing_pools"} Dividing Pools
+            %li<
+              %a{:href => "#choosing_secrets_and_keys"} Choosing Secrets and Keys
+            %li<
+              %a{:href => "#finalizing_the_character"} Finalizing the character
+            %li<
+              %a{:href => "#initial_situation"} Initial Situation
+            %li<
+              %a{:href => "#player_character_party"} Player character party
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Playing the Game
+            %b.caret>
+          %ul.dropdown-menu
+            %li<
+              %a{:href => "#playing_the_game"} Introduction
+            %li<
+              %a{:href => "#starting_up_the_session"} Starting up the session
+            %li<
+              %a{:href => "#scenes"} Scenes
+            %li<
+              %a{:href => "#tasks_in_free_play"} Tasks in Free Play
+            %li<
+              %a{:href => "#choice_as_content"} Choice as Content
+            %li<
+              %a{:href => "#conflicts"} Conflicts
+            %li<
+              %a{:href => "#consequences"} Consequences
+            %li<
+              %a{:href => "#pool_refreshment"} Pool Refreshment
+            %li<
+              %a{:href => "#harm"} Harm
+            %li<
+              %a{:href => "#birds_eye_view"} Bird's Eye View
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Ability Check
+            %b.caret>
+          %ul.dropdown-menu
+            %li<
+              %a{:href => "#ability_check"} Introduction
+            %li<
+              %a{:href => "#timing_and_stakes"} Timing and stakes
+            %li<
+              %a{:href => "#narrating_success"} Narrating success
+            %li<
+              %a{:href => "#no_suitable_ability"} No suitable Ability?
+            %li<
+              %a{:href => "#bonus_and_penalty_dice"} Bonus and penalty dice
+            %li<
+              %a{:href => "#circumstance_penalties"} Circumstance penalties
+            %li<
+              %a{:href => "#supporting_a_check"} Supporting a check
+            %li<
+              %a{:href => "#recording_effects"} Recording Effects
+            %li<
+              %a{:href => "#using_effects"} Using Effects
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Conflict Resolution
+            %b.caret>
+          %ul.dropdown-menu
+            %li<
+              %a{:href => "#conflict_resolution"} Introduction
+            %li<
+              %a{:href => "#initiating_conflict"} Initiating conflict
+            %li<
+              %a{:href => "#conflict_stakes"} Conflict stakes
+            %li<
+              %a{:href => "#leverage_propriety_and_scope"} Leverage, propriety and scope
+            %li<
+              %a{:href => "#selecting_abilities"} Selecting Abilities
+            %li<
+              %a{:href => "#resolving_the_conflict"} Resolving the conflict
+            %li<
+              %a{:href => "#ability_checks_in_conflict"} Ability checks in conflict
+            %li<
+              %a{:href => "#several_characters_in_conflict"} Several characters in conflict
+            %li<
+              %a{:href => "#solo_conflicts"} Solo conflicts
+            %li<
+              %a{:href => "#secondary_characters_in_conflict"} Secondary characters in conflict
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Extended Conflict
+            %b.caret>
+          %ul.dropdown-menu
+            %li<
+              %a{:href => "#extended_conflict"} Introduction
+            %li<
+              %a{:href => "#why_extend"} Why extend?
+            %li<
+              %a{:href => "#scope_and_stakes_in_extended_conflict"} Scope and stakes in extended conflict
+            %li<
+              %a{:href => "#negotiation_phase"} Negotiation phase
+            %li<
+              %a{:href => "#the_defensive_action"} The defensive action
+            %li<
+              %a{:href => "#resolving_actions"} Resolving actions
+            %li<
+              %a{:href => "#rolling_a_tie"} Rolling a tie
+            %li<
+              %a{:href => "#ending_a_round"} Ending a round
+            %li<
+              %a{:href => "#special_actions"} Special actions
+            %li<
+              %a{:href => "#multiple_characters_in_extended_conflict"} Multiple characters in extended conflict
+            %li<
+              %a{:href => "#against_effects"} Against Effects
+            %li<
+              %a{:href => "#strategy_in_extended_conflict"} Strategy in Extended Conflict
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Keys and Experience
+            %b.caret>
+          %ul.dropdown-menu
+            %li<
+              %a{:href => "#keys_and_experience"} Introduction
+            %li<
+              %a{:href => "#gaining_and_using_advances"} Gaining and Using Advances
+            %li<
+              %a{:href => "#advance_debt"} Advance Debt
+            %li<
+              %a{:href => "#losing_benefits"} Losing Benefits
+            %li<
+              %a{:href => "#transcendence"} Transcendence
+            %li<
+              %a{:href => "#wrapping_up_the_campaign"} Wrapping up the campaign
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Secrets and Crunch
+            %b.caret>
+          %ul.dropdown-menu
+            %li<
+              %a{:href => "#secrets_and_crunch"} Introduction
+            %li<
+              %a{:href => "#learning_secrets"} Learning Secrets
+            %li<
+              %a{:href => "#developing_new_secrets"} Developing new Secrets
+            %li<
+              %a{:href => "#advanced_crunch"} Advanced Crunch
+            %li<
+              %a{:href => "#equipment_ratings"} Equipment ratings
+            %li<
+              %a{:href => "#drugs"} Drugs
+            %li<
+              %a{:href => "#werewolves"} Werewolves
+            %li<
+              %a{:href => "#martial_arts"} Martial Arts
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Story Guide
+            %b.caret>
+          %ul.dropdown-menu
+            %li<
+              %a{:href => "#story_guide"} Introduction
+            %li<
+              %a{:href => "#preparing_for_play"} Preparing for play
+            %li<
+              %a{:href => "#elements_of_preparation"} Elements of Preparation
+            %li<
+              %a{:href => "#adventure_map"} Adventure map
+            %li<
+              %a{:href => "#framing_scenes"} Framing Scenes
+            %li<
+              %a{:href => "#secondary_characters"} Secondary Characters
+            %li<
+              %a{:href => "#running_conflicts"} Running Conflicts
+            %li<
+              %a{:href => "#rules_arbitration"} Rules Arbitration
+            %li<
+              %a{:href => "#running_a_campaign"} Running a Campaign
+        %li
+          %a{:href => "#afterword"} Afterword
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Appendices & Extras
+            %b.caret>
+          %ul.dropdown-menu
+            %li<
+              %a{:href => "#example_abilities"} Example Abilities
+            %li<
+              %a{:href => "#example_keys"} Example Keys
+            %li<
+              %a{:href => "#example_secrets"} Example Secrets
+            %li.divider
+            %li<
+              %a{:href => "pdf/ss_character_sheet.pdf"} Character Sheet
+            %li<
+              %a{:href => "mailto:nicknovitski@gmail.com?subject=Solar%20System%20SRD"} Question or Correction
+        %li
+          %a{:href => "http://creativecommons.org/licenses/by/3.0/", :rel => "license"}
+            %img{:alt => "Creative Commons License", :height => "15", :src => "http://i.creativecommons.org/l/by/3.0/80x15.png", :style => "border-width:0", :width => "80"}/
+.container-fluid
+  .row-fluid.hyphenate
+    = haml :_ss_foreword
+    = haml :_ss_ch1
+    = haml :_ss_ch2
+    = haml :_ss_ch3
+    = haml :_ss_ch4
+    = haml :_ss_ch5
+    = haml :_ss_ch6
+    = haml :_ss_ch7
+    = haml :_ss_ch8
+    = haml :_ss_ch9
+    = haml :_ss_afterword
+    = haml :_ss_exampleabilities
+    = haml :_ss_examplekeys
+    = haml :_ss_examplesecrets
