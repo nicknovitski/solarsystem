@@ -17,15 +17,6 @@ header, h1, h2 {
     float:left;
 }
 
-a.brand {
-    width: 90px;
-}
-
-ul.nav {
-    width: 820px;
-    max-height: 80px;
-}
-
 h1 {
 	text-shadow: gray 2px 1px 2px;
 }

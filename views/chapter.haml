@@ -1,5 +1,5 @@
+= haml :_navbar, {:locals=>{:title=>title}}
 .container-fluid
   .row-fluid.hyphenate
-    = haml :_navbar, {:locals=>{:title=>title}}
     = haml ("_"+chapter.name.snake_case).to_sym
     = haml :_pager
