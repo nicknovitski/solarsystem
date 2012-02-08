@@ -102,7 +102,7 @@ CHAPTERS = [FOREWORD,
             APPENDICES]
 
 before do
-  #cache_control :public, :max_age => 86400  #uncomment this when you're really ready
+  cache_control :public, :max_age => 21600
 end
 
 get '/onepage' do
