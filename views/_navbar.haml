@@ -6,7 +6,6 @@
           %img{:alt => "The Solar System", :height => "50", :src => "img/sslogo50px.png", :width => "120"}/
         - else
           = title
-
       %ul.nav
         - if @chapter.sections.nil?
           - @chapters.each do |c|

@@ -101,25 +101,30 @@ CHAPTERS = [FOREWORD,
             AFTERWORD,
             APPENDICES]
 
+before do
+  #cache_control :public, :max_age => 86400  #uncomment this when you're really ready
+end
+
 get '/onepage' do
-  haml :solarsystem
+  @chapters = CHAPTERS
+  haml :solarsystem, {:locals=>{:title=>"The Solar System"}}
 end
 
 get "/:chapter" do |chap_name|
   @chapters = CHAPTERS
   chap_name = chap_name.humanize
   i = @chapters.find_index{|o| o.name == chap_name }
-  if i.nil?
+  @chapter = @chapters[i]
+  @page_left = i==0 ? nil : @chapters[i-1].name
+  begin
+    @page_right = @chapters[i+1].name
+  rescue NoMethodError
+    @page_right = nil
+  end
+  begin
+    haml :chapter, {:locals=>{:title=>chap_name, :chapter=>@chapters[i]}}
+  rescue TypeError
     halt "No such chapter: #{chap_name}"
-  else
-    @chapter = @chapters[i]
-    @page_left = i==0 ? nil : @chapters[i-1].name
-    begin
-      @page_right = @chapters[i+1].name
-    rescue NoMethodError
-      @page_right = nil
-    end
-    haml :chapter
   end
 end
 

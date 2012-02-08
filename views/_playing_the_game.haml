@@ -1,4 +1,4 @@
-%section#playing_the_game.chapter.span10
+%section#playing_the_game.chapter
   %header
     %h1 Playing the Game
   %p When the players have worked out a setting and created characters, it’s time to start the actual game. It is possible that this could happen directly after character generation, but far more likely is that the group adjourns and reconvenes at another time to actually begin the campaign — much depends on how long the players take in agreeing upon a setting and creating their characters.
@@ -11,11 +11,11 @@
       %code situation
       encountered by the characters the other players run. Such a situation is always consistent with setting and character nature, interesting and flows well with what has gone before. This is probably the hardest part of being the Story Guide, but practice makes it easy.
     %p
-      The issue of scenario preparation is
-      %a{:href => "#preparing_for_play"} handled in depth
-      in
+      The issue of
+      %a{:href => "/story_guide#preparing_for_play"} scenario preparation
+      is handled in depth in
       = succeed "." do
-        %a{:href => "#story_guide"} Story Guide
+        %a{:href => "/story_guide"} Story Guide
       For now it’s enough to note that the Story Guide is likely not flying blind when he starts the game. Even if the first game session follows directly after character creation, a lunch break or similar might be in order to allow the Story Guide to gather his thoughts.
     %p
       Assuming that the Story Guide is comfortable with his preparation for play, he will proceed to address the other players in turn, describing the situation the individual character is involved in. For the first session this starting point is heavily dependent upon the earlier discussion about whether the character is
@@ -61,7 +61,7 @@
         The Story Guide has
         = succeed ":" do
           %code
-            %a{:href => "#backstory_authority"} backstory authority
+            %a{:href => "/story_guide#backstory_authority"} backstory authority
         he can decide what happened before the player characters got to the scene at all. If there is a disagreement over who gets to decide something, it’s probably either a conflict or a backstory authority issue.
     %p Groups differ greatly in how much free play they prefer, and a single campaign will also have different stages in this regard. Usually a scene might have anywhere from one minute to a quarter hour of free play before the players move on.
     %p
@@ -118,7 +118,7 @@
       %code> Keys
       , as described in depth in
       = succeed "," do
-        %a{:href => "#keys_and_experience"} Keys and Experience
+        %a{:href => "/keys_and_experience"} Keys and Experience
       play an important role here, as they reveal how the player views his character and mechanically reward him for certain choices over others. The Story Guide simplifies his job immensely by directing the choices he presents in the fiction towards the Keys of the character: will the character do this sort of thing if that’s what his Keys require? Which Key will he choose when he has to choose between two? Will he get rid of a Key that leads towards corruption?
   %section#conflicts
     %header
@@ -127,7 +127,7 @@
     %p
       When player characters end up in conflict with each other or secondary characters, the Story Guide may invoke the conflict rules, which are described in great detail in
       = succeed "." do
-        %a{:href => "#conflict_resolution"} Conflict Resolution
+        %a{:href => "/conflict_resolution"} Conflict Resolution
       Generally speaking, conflicts are a matter of great stress, tear and wear for characters: they burn up their resources, especially their Pools, which are depleted in conflict. Abilities play a dominant role in resolving who gets their way in conflict situations, but willingness to sacrifice progressively more drastic resources often ultimately decides the conflict.
     %p
       Although it might seem that way, players are not actually disagreeing when their characters go into conflict; the characters might be passionate about how they’d like a situation to be resolved, and the players might well sympathize, but ultimately everybody is there for cooperative entertainment — the task of each player is to not compromise the interests of their characters, but this does not mean that the players themselves are trying to make each other fail somehow. The relationship between the player and the character might be most comprehensively described as one of
@@ -140,15 +140,15 @@
     %p
       This continuity provides much of the structure for ongoing play in the Solar System: scenes follow each other as sensible consequence from previous events. Play might jump back and forth between different locations and characters as different player characters are followed, but even then the Story Guide makes an effort to provide connections. More advice on tying scenes together is provided in
       = succeed "." do
-        %a{:href => "#framing_scenes"} Framing Scenes
+        %a{:href => "/story_guide#framing_scenes"} Framing Scenes
     %p An important consideration is that there is no one player who determines how consequences play out and where the next scene leads play. While the Story Guide has the task of framing new scenes, continuity of consequence and character choice provides the array of possibilities. Usually character intent as depicted by the player provides more of a determining agent for the direction of play than the Story Guide ever should.
     %h3#experience Experience
     %p
       As
-      %a{:href => "#gaining_and_using_advances"} described
+      %a{:href => "/keys_and_experience#gaining_and_using_advances"} described
       in
       = succeed "," do
-        %a{:href => "#keys_and_experience"} Keys and Experience
+        %a{:href => "/keys_and_experience"} Keys and Experience
       the most important long-term consequence of the events of play are
       %code experience points
       that characters collect by participating in events relevant to their own identity. In the long term experience may change a character’s identity or increase his ability to influence the world around him; ultimately it leads to
@@ -190,6 +190,21 @@
     %p As can be seen, a character pretty much has to interact with others to refresh himself. This is intentional — such situations are great for introducing new secondary characters or other human interest. Likewise it’s clear that the same activities might well refresh several Pools at once, which is just dandy.
     %p When a player wants a refresh for his character, there are essentially two situations: either the character is already well positioned with his friends at hand and a mutually acceptable pastime in mind, in which case the scene can just proceed normally, or the character might be at loose ends and explicitly going to look for a refreshment. In the latter case it’s up to the Story Guide to frame a refreshment scene and let the character make some friends.
     %p There are two specific narrative motifs that the Story Guide should consider when a refreshment scene arrives:
+    %ul
+      %li
+        %p
+          The refreshing character has his
+          = succeed "," do
+            %em guard down
+          so the refreshment scene is a tacit permission to mess with the character's fate in unexpected ways.  If the player had his character go drinking in the bad part of town for his refreshment, say, it would be quite possible for him to make an error in judgment and end up in a compromising situation related to his current troubles; having a refreshment scene
+          %em means
+          doing some pretty foolish things.
+      %li
+        %p
+          If the refreshing character has resolved most of his troubles and seems to be settling in comfortably, the Story Guide may well use a refresh scene to introduce
+          = succeed ":" do
+            %em new stories
+          a refreshing character often ends up meeting, greeting and getting friendly with new secondary characters who may then get the character involved in something serious later on.  Whenever the current story matter seems to be running down, the Story Guide does well to introduce new material in refreshes - the stuff need not combust immediately, but it's useful to have some preaprations in place for when the character's current trouble is resolved once and for all.
   %section#harm
     %header
       %h2 Harm
@@ -210,10 +225,10 @@
       to see what it looks like!) When a character suffers a given level of Harm, the player crosses that level off and marks down the Pool related to the Harm. Each level causes penalty dice for the character: a Minor level causes the character to suffer one penalty die to his next Ability check; a Major level causes one penalty die to all Ability checks associated with the same Pool; a Mortal level Harm causes a penalty die to all Ability checks and forces the character to spend a point from the Pool associated with an Ability to use it at all.
     %p
       (I know that I haven’t discussed penalty dice yet at this point. They’re
-      %a{:href => "#bonus_and_penalty_dice"} explained in detail
+      %a{:href => "/ability_check#bonus_and_penalty_dice"} explained in detail
       in
       = succeed "," do
-        %a{:href => "#ability_check"} Ability Check
+        %a{:href => "/ability_check"} Ability Check
       but for now it’s enough to know that Harm makes it more difficult for the character to succeed in his endeavors.)
     %p As for the setting, Harm may represent any negative effects upon the character’s integrity. Physical bruises and wounds are typical in action stories, but mental anguish, doubt, shame, erosion of social stature or just losing face might be depicted by Harm. Ultimately this depends on the Pools used in the campaign, as each Harm is associated with one.
     %p Harm is obtained from fictional events: the Story Guide may declare that a given course of events will result in Harm for a character. This decision is always made before the Harm happens so as to allow the player to react and declare a conflict. Thus the Story Guide might warn a player that having his character fall from the cliff-side into the river will be cause for level 2 Harm, which information would then be available for the player when making an Ability check to climb up.
@@ -270,9 +285,11 @@
             %code Free Play
     %p Looking at the above description of the play process, an overview emerges: the Story Guide has the initiative in thrusting player characters into exciting situations in the story, wherein their choices then lead to consequences that dictate new scenes. Choices that lead to conflicts cause characters to suffer Pool expenditures and Harm, which in turn require refreshment scenes to overcome. The end result is a cycle of play where choice, conflict and refreshment scenes alternate in a flexible manner, depending on the choices each player makes. If all goes well and the players appreciate each other’s input, the end-result should be an exciting story-creation session!
     %p
-      The following chapters provide the core rules material of the Solar System, the conflict rules that are used to resolve tense and uncertain situations that player characters often face. After that
-      %a{:href => "#keys_and_experience"} the experience rules
+      The following chapters provide the core rules material of the Solar System,
+      %a{:href=>"/conflict_resolution"} the conflict rules
+      that are used to resolve tense and uncertain situations that player characters often face. After that
+      %a{:href => "/keys_and_experience"} the experience rules
       describe how characters change and develop as the result of play. Finally, in
-      %a{:href => "#story_guide"} Story Guide
+      %a{:href => "/story_guide"} Story Guide
       there is some more concrete advice on how a session of play is arranged to satisfaction.
     %p Unless the reader is looking for a particular topic at this point, it’s probably best to continue directly to the next chapter which lays down the groundwork for how Abilities are used to resolve situations the player characters encounter in their adventures. Before trying to play the game it’s important for at least one player to have a firm grasp of how and why the Ability checks and conflict rules work as they do.

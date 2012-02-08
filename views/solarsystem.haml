@@ -234,17 +234,5 @@
             %img{:alt => "Creative Commons License", :height => "15", :src => "http://i.creativecommons.org/l/by/3.0/80x15.png", :style => "border-width:0", :width => "80"}/
 .container-fluid
   .row-fluid.hyphenate
-    = haml :_ss_foreword
-    = haml :_ss_ch1
-    = haml :_ss_ch2
-    = haml :_ss_ch3
-    = haml :_ss_ch4
-    = haml :_ss_ch5
-    = haml :_ss_ch6
-    = haml :_ss_ch7
-    = haml :_ss_ch8
-    = haml :_ss_ch9
-    = haml :_ss_afterword
-    = haml :_ss_exampleabilities
-    = haml :_ss_examplekeys
-    = haml :_ss_examplesecrets
+    - @chapters.each do |c|
+      = haml :"_#{c.name.snake_case}", :locals=>{:chapter => c}
