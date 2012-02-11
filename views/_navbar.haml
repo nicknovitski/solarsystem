@@ -1,24 +1,18 @@
 #navbar.navbar.navbar-fixed-top
   .navbar-inner
     .container
-      %ul.nav
-        - if @chapter.sections.nil?
+      %a.btn.btn-navbar{:data=>{:toggle=>"collapse", :target=>".nav-collapse"}}
+        %img{:src=>"img/favicon.ico"}
+      %a.brand
+        %img{:alt => "The Solar System", :height => "50", :src => "img/sslogo50px.png", :width => "120"}/
+      .nav-collapse.in
+        %ul.nav
           %li
-            %img{:alt => "The Solar System", :height => "40", :src => "img/sslogo50px.png"}/
-        - else
-          %li.dropdown
-            %a.dropdown-toggle{"data-toggle" => "dropdown", :href=>"#"}
-              %strong= title
-              %img{:src=>"img/favicon.ico", :width=>"12"}
-            %ul.dropdown-menu
-              - @chapters.each do |c|
-                %li
-                  %a{:href=> c.name.snake_case}=c.name
-        - if @chapter.sections.nil?
-          - @chapters.each do |c|
-            %li{:class=>c==@chapter ? "active" : nil }
-              %a{:href=>c.name.snake_case}=c.name
-        - else
-          - @chapter.sections.each do |section|
-            %li<
-              %a{:href=>'#'+section.snake_case}= section
+            %a{:href=>"##{title.snake_case}"}= title
+          - unless @chapter.sections.nil?
+            - @chapter.sections.each do |section|
+              %li<
+                %a{:href=>'#'+section.snake_case}= section
+        %ul.nav.pull-right
+          %li
+            %a.btn.btn-navbar{:href=>"/table_of_contents"}< Table of Contents

@@ -13,6 +13,7 @@ end
 Struct.new("Chapter", :name, :sections)
 
 FOREWORD = Struct::Chapter.new("Foreword")
+TOC = Struct::Chapter.new("Table of Contents")
 CHAPTER1 = Struct::Chapter.new("Starting a Game", ["Choosing a Setting",
                                                    "Focal Points",
                                                    "Overview of the Game",
@@ -89,6 +90,7 @@ AFTERWORD = Struct::Chapter.new("Afterword")
 APPENDICES= Struct::Chapter.new("Appendices", ["Example Abilities", "Example Keys", "Example Secrets"])
 
 CHAPTERS = [FOREWORD,
+            TOC,
             CHAPTER1,
             CHAPTER2,
             CHAPTER3,
