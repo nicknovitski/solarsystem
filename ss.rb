@@ -102,7 +102,12 @@ CHAPTERS = [FOREWORD,
             APPENDICES]
 
 before do
-  cache_control :public, :max_age => 21600
+  cache_control :public, :max_age => 21600 if ENV['RACK_ENV']=="production"
+end
+
+get '/world_of_near' do
+  @title = "World of Near"
+  haml :world_of_near
 end
 
 get '/onepage' do
