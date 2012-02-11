@@ -122,17 +122,18 @@ get "/:chapter" do |chap_name|
   @chapters = CHAPTERS
   @title = chap_name.humanize
   i = @chapters.find_index{|o| o.name == @title }
-  @chapter = @chapters[i]
-  @page_left = i==0 ? nil : @chapters[i-1].name
-  begin
-    @page_right = @chapters[i+1].name
-  rescue NoMethodError
-    @page_right = nil
-  end
-  begin
+  if i
+    @chapter = @chapters[i]
+    @page_left = i==0 ? nil : @chapters[i-1].name
+    begin
+      @page_right = @chapters[i+1].name
+    rescue NoMethodError
+      @page_right = nil
+    end
+
     haml :chapter, {:locals=>{:chapter=>@chapters[i]}}
-  rescue TypeError
-    halt "No such chapter: #{@title}"
+  else
+    redirect to("/")
   end
 end
 
