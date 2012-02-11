@@ -107,13 +107,14 @@ end
 
 get '/onepage' do
   @chapters = CHAPTERS
-  haml :solarsystem, {:locals=>{:title=>"The Solar System"}}
+  @title = "The Solar System"
+  haml :solarsystem
 end
 
 get "/:chapter" do |chap_name|
   @chapters = CHAPTERS
-  chap_name = chap_name.humanize
-  i = @chapters.find_index{|o| o.name == chap_name }
+  @title = chap_name.humanize
+  i = @chapters.find_index{|o| o.name == @title }
   @chapter = @chapters[i]
   @page_left = i==0 ? nil : @chapters[i-1].name
   begin
@@ -122,9 +123,9 @@ get "/:chapter" do |chap_name|
     @page_right = nil
   end
   begin
-    haml :chapter, {:locals=>{:title=>chap_name, :chapter=>@chapters[i]}}
+    haml :chapter, {:locals=>{:chapter=>@chapters[i]}}
   rescue TypeError
-    halt "No such chapter: #{chap_name}"
+    halt "No such chapter: #{@title}"
   end
 end
 

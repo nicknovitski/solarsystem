@@ -1,5 +1,3 @@
-= haml :_navbar, {:locals=>{:title=>title}}
-.container-fluid
-  .row-fluid.hyphenate
-    = haml ("_"+chapter.name.snake_case).to_sym
-    = haml :_pager
+.span7.offset2
+  = haml ("_"+chapter.name.snake_case).to_sym
+  = haml :_pager
