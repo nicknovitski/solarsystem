@@ -3,10 +3,10 @@ require 'haml'
 
 class String
   def humanize
-    self.split("_").each{|w| w.capitalize! unless ["and", "the", "of", "a"].include? w}.join(" ")
+    self.split("-").each{|w| w.capitalize! unless ["and", "the", "of", "a"].include? w}.join(" ")
   end
   def snake_case
-    self.downcase.gsub(" ", "_").delete(",?'")
+    self.downcase.gsub(" ", "-").delete(",?'")
   end
 end
 
@@ -107,9 +107,9 @@ before do
   cache_control :public, :max_age => 21600 if ENV['RACK_ENV']=="production"
 end
 
-get '/world_of_near' do
+get '/world-of-near' do
   @title = "World of Near"
-  haml :world_of_near
+  haml :worldofnear
 end
 
 get '/onepage' do

@@ -1,4 +1,4 @@
-%section#table_of_contents
+%section#table-of-contents
   %header
     %h1 Table of Contents
   %ol
@@ -10,3 +10,7 @@
           - chapter.sections.each do |section|
             %li
               %a{:href=>"/#{chapter.name.snake_case}##{section.snake_case}"}= section
+  %h2 Extras
+  %ul
+    %li
+      %a{:href=>"/onepage"} Everything on one page
