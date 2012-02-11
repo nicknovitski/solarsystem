@@ -97,7 +97,7 @@ textarea {
 body {
   margin: 0;
   font-family: "lucida grande", "lucida sans unicode", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.625em;
   color: #111111;
   background-color: #FFFEF0;
@@ -276,12 +276,12 @@ a:hover {
 p {
   margin: 0 0 0.8125em;
   font-family: "lucida grande", "lucida sans unicode", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.625em;
   text-indent: 1.625em;
 }
 p small {
-  font-size: 14px;
+  font-size: 18px;
   color: #999999;
 }
 .lead {
@@ -472,7 +472,7 @@ cite {
 code, pre {
   padding: 0 3px 2px;
   font-family: Menlo, Monaco, "Courier New", monospace;
-  font-size: 15px;
+  font-size: 19px;
   color: #333333;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -520,7 +520,7 @@ legend {
   width: 100%;
   padding: 0;
   margin-bottom: 2.4375em;
-  font-size: 24px;
+  font-size: 30px;
   line-height: 3.25em;
   color: #333333;
   border: 0;
@@ -532,7 +532,7 @@ button,
 select,
 textarea {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: normal;
   line-height: 1.625em;
 }
@@ -550,7 +550,7 @@ select,
   height: 1.625em;
   padding: 4px;
   margin-bottom: 9px;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.625em;
   color: #555555;
   border: 1px solid #ccc;
@@ -1738,7 +1738,7 @@ table .span12 {
 }
 .btn-large {
   padding: 9px 14px;
-  font-size: 18px;
+  font-size: 22px;
   line-height: normal;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -1749,7 +1749,7 @@ table .span12 {
 }
 .btn-small {
   padding: 5px 9px;
-  font-size: 14px;
+  font-size: 18px;
   line-height: -0.375em;
 }
 .btn-small .icon {
@@ -2442,7 +2442,7 @@ button.btn.small, input[type="submit"].btn.small {
   background-color: transparent;
 }
 .navbar .btn, .navbar .btn-group {
-  margin-top: 5px;
+  margin-top: 15px;
 }
 .navbar .btn-group .btn {
   margin-top: 0;
@@ -3064,7 +3064,7 @@ a.thumbnail:hover {
 }
 .label {
   padding: 1px 3px 2px;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
   color: #ffffff;
   text-transform: uppercase;
