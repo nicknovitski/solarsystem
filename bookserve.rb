@@ -22,7 +22,7 @@ module SolSys
     "solarsystem"
   end
   def self.credit
-    "Solar System, &copy; Arkenstone Press 2008"
+    "Arkenstone Press 2008"
   end
 
   @foreword = Struct::Chapter.new("Foreword")

@@ -1,20 +1,5 @@
 %section#table-of-contents
-  %header#book-header
-    %img.center{:alt => "Solar System", :height => "210", :src => "/img/sslogolarge.png", :title => "", :width => "500"}/
-  %section#license.well
-    %p
-      This SRD, as well as all linked variations on the Solar System Logo, are licensed under a
-      = succeed "." do
-        %a{:href => "http://creativecommons.org/licenses/by/3.0/", :rel => "license"} Creative Commons Attribution 3.0 Unported License
-      The text was extracted, edited and adapted by
-      = succeed "," do
-        %a{:href => "http://www.nicknovitski.com"} Nick Novitski
-      but remains a shamelessly worshipful copy of Eero Tuovinen's
-      = succeed "," do
-        %a{:href => "http://www.arkenstonepublishing.net/#{@book.url}", :rel => "dct:source"}= @book.credit
-      which was itself derived from
-      = succeed "." do
-        %a{:href => "http://crngames.com/the-shadow-of-yesterday/"} The Shadow of Yesterday, &copy; Clinton R. Nixon 2005
+  = haml :_license
   %h1 Table of Contents
   %ol
     - @book.chapters.each do |chapter|
