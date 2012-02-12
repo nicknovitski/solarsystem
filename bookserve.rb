@@ -12,8 +12,6 @@ end
 
 Struct.new("Chapter", :name, :sections)
 
-TOC = Struct::Chapter.new("Table of Contents")
-
 module SolSys
   def self.title
     "The Solar System"
