@@ -1,6 +1,6 @@
 %section#table-of-contents
   %header#book-header
-    %img.center{:alt => "Solar System", :height => "210", :src => "img/sslogolarge.png", :title => "", :width => "500"}/
+    %img.center{:alt => "Solar System", :height => "210", :src => "/img/sslogolarge.png", :title => "", :width => "500"}/
   %section#license.well
     %p
       This SRD, as well as all linked variations on the Solar System Logo, are licensed under a
@@ -9,9 +9,13 @@
       The text was extracted, edited and adapted by
       = succeed "," do
         %a{:href => "http://www.nicknovitski.com"} Nick Novitski
-      but remains a shamelessly worshipful copy of
+      but remains a shamelessly worshipful copy of Eero Tuovinen's
       = succeed "," do
-        %a{:href => "http://www.arkenstonepublishing.net/solarsystem", :rel => "dct:source"} Solar System, &copy; Arkenstone Press 2008
+        %a{:href => "http://www.arkenstonepublishing.net/#{@book}", :rel => "dct:source"}
+          - if @book == "solarsystem"
+            Solar System, &copy; Arkenstone Press 2008
+          - elsif @book == "tsoy"
+            World of Near, &copy; Arkenstone Press 2009
       which was itself derived from
       = succeed "." do
         %a{:href => "http://crngames.com/the-shadow-of-yesterday/"} The Shadow of Yesterday, &copy; Clinton R. Nixon 2005
@@ -19,17 +23,17 @@
   %ol
     - @chapters.each do |chapter|
       %li
-        %a{:href=>"/#{chapter.name.snake_case}"}= chapter.name
+        %a{:href=>"/#{@book}/#{chapter.name.snake_case}"}= chapter.name
       - unless chapter.sections.nil?
         %ol
           - chapter.sections.each do |section|
             %li
-              %a{:href=>"/#{chapter.name.snake_case}##{section.snake_case}"}= section
+              %a{:href=>"/#{@book}/#{chapter.name.snake_case}##{section.snake_case}"}= section
   %h2 Extras
   %ul
     %li
-      %a{:href=>"/onepage"} All of the above on one page
+      %a{:href=>"/#{@book}/onepage"} All of the above on one page
     %li
-      %a{:href=>"/pdf/ss_character_sheet.pdf"} Character Sheet
+      %a{:href=>"/pdf/#{@book}_character_sheet.pdf"} Character Sheet
     %li
       %a{:href=>"mailto:nicknovitski@gmail.com?subject=SolarSRD"} Questions and Praise

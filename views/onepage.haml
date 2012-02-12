@@ -1,0 +1,2 @@
+- @chapters.each do |c|
+  = haml :"#{@book}/_#{c.name.snake_case}", :locals=>{:chapter => c}
