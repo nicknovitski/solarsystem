@@ -105,9 +105,23 @@ module SolSys
 
 end
 
+module TSoY
+  def self.title
+    "The World of Near"
+  end
+  def self.url
+    "tsoy"
+  end
+  def self.credit
+    "Arkenstone Press 2009"
+  end
+end
+
 def get_module(url)
   if url=="solarsystem"
     SolSys
+  elsif url == "tsoy"
+    TSoY
   end
 end
 
@@ -116,6 +130,7 @@ before do
 end
 
 get '/tsoy' do
+  @book = TSoY
   @title = "World of Near"
   haml :worldofnear
 end
