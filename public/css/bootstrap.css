@@ -321,7 +321,6 @@ h1 {
   font-size: 30px;
   line-height: 3.22em;
   text-shadow: gray 2px 1px 2px;
-  text-align: center;
 }
 h1 small {
   font-size: 18px;
@@ -329,7 +328,6 @@ h1 small {
 h2 {
   font-size: 24px;
   line-height: 3.22em;
-  text-align: center;
 }
 h2 small {
   font-size: 18px;
@@ -357,6 +355,9 @@ h6 {
   font-size: 11px;
   color: #999999;
   text-transform: uppercase;
+}
+header {
+  text-align: center;
 }
 .page-header {
   padding-bottom: 0.6100000000000001em;
