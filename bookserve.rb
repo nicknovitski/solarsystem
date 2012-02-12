@@ -10,16 +10,28 @@ class String
   end
 end
 
+Struct.new("Chapter", :name, :sections)
+
+TOC = Struct::Chapter.new("Table of Contents")
+
 module SolSys
-  Struct.new("Chapter", :name, :sections)
-  TOC = Struct::Chapter.new("Table of Contents")
-  FOREWORD = Struct::Chapter.new("Foreword")
-  CHAPTER1 = Struct::Chapter.new("Starting a Game", ["Choosing a Setting",
+  def self.title
+    "The Solar System"
+  end
+  def self.url
+    "solarsystem"
+  end
+  def self.credit
+    "Solar System, &copy; Arkenstone Press 2008"
+  end
+
+  @foreword = Struct::Chapter.new("Foreword")
+  @chapter1 = Struct::Chapter.new("Starting a Game", ["Choosing a Setting",
                                                      "Focal Points",
                                                      "Overview of the Game",
                                                      "Introducing Crunch",
                                                      "Initial Crunch"])
-  CHAPTER2 = Struct::Chapter.new("Character Creation", ["Abilities",
+  @chapter2 = Struct::Chapter.new("Character Creation", ["Abilities",
                                                         "Heroic Event",
                                                         "Character Background",
                                                         "Cultural Identity",
@@ -29,7 +41,7 @@ module SolSys
                                                         "Finalizing the character",
                                                         "Initial situation",
                                                         "Player character party"])
-  CHAPTER3 = Struct::Chapter.new("Playing the Game", ["Starting up the session",
+  @chapter3 = Struct::Chapter.new("Playing the Game", ["Starting up the session",
                                                        "Scenes",
                                                        "Tasks in Free Play",
                                                        "Choice as content",
@@ -38,7 +50,7 @@ module SolSys
                                                        "Pool Refreshment",
                                                        "Harm",
                                                        "Bird's eye view"])
-  CHAPTER4 = Struct::Chapter.new("Ability Check", ["Timing and stakes",
+  @chapter4 = Struct::Chapter.new("Ability Check", ["Timing and stakes",
                                                    "Narrating success",
                                                    "No suitable Ability?",
                                                    "Bonus and penalty dice",
@@ -46,7 +58,7 @@ module SolSys
                                                    "Supporting a check",
                                                    "Recording Effects",
                                                    "Using Effects"])
-  CHAPTER5 = Struct::Chapter.new("Conflict Resolution", ["Initiating conflict",
+  @chapter5 = Struct::Chapter.new("Conflict Resolution", ["Initiating conflict",
                                                          "Conflict stakes",
                                                          "Leverage, propriety and scope",
                                                          "Selecting Abilities",
@@ -55,7 +67,7 @@ module SolSys
                                                          "Several characters in conflict",
                                                          "Solo conflicts",
                                                          "Secondary characters in conflict"])
-  CHAPTER6 = Struct::Chapter.new("Extended Conflict", ["Why extend?",
+  @chapter6 = Struct::Chapter.new("Extended Conflict", ["Why extend?",
                                                        "Scope and stakes in extended conflict",
                                                        "Negotiation phase",
                                                        "The defensive action",
@@ -66,19 +78,19 @@ module SolSys
                                                        "Multiple characters in extended conflict",
                                                        "Against Effects",
                                                        "Strategy in Extended Conflict"])
-  CHAPTER7 = Struct::Chapter.new("Keys and Experience", ["Gaining and Using Advances",
+  @chapter7 = Struct::Chapter.new("Keys and Experience", ["Gaining and Using Advances",
                                                          "Advance Debt",
                                                          "Losing Benefits",
                                                          "Transcendence",
                                                          "Wrapping up the campaign"])
-  CHAPTER8 = Struct::Chapter.new("Secrets and Crunch", ["Learning Secrets",
+  @chapter8 = Struct::Chapter.new("Secrets and Crunch", ["Learning Secrets",
                                                         "Developing new Secrets",
                                                         "Advanced Crunch",
                                                         "Equipment ratings",
                                                         "Drugs",
                                                         "Werewolves",
                                                         "Martial Arts"])
-  CHAPTER9 = Struct::Chapter.new("Story Guide", ["Preparing for play",
+  @chapter9 = Struct::Chapter.new("Story Guide", ["Preparing for play",
                                                  "Elements of preparation",
                                                  "Adventure map",
                                                  "Framing Scenes",
@@ -86,30 +98,23 @@ module SolSys
                                                  "Running Conflicts",
                                                  "Rules Arbitration",
                                                  "Running a campaign"])
-  AFTERWORD = Struct::Chapter.new("Afterword")
-  APPENDICES= Struct::Chapter.new("Appendices", ["Example Abilities", "Example Keys", "Example Secrets"])
+  @afterword = Struct::Chapter.new("Afterword")
+  @appendices = Struct::Chapter.new("Appendices", ["Example Abilities", "Example Keys", "Example Secrets"])
 
-  CHAPTERS = [FOREWORD,
-              CHAPTER1,
-              CHAPTER2,
-              CHAPTER3,
-              CHAPTER4,
-              CHAPTER5,
-              CHAPTER6,
-              CHAPTER7,
-              CHAPTER8,
-              CHAPTER9,
-              AFTERWORD,
-              APPENDICES]
+  def self.chapters
+    [@foreword, @chapter1, @chapter2, @chapter3, @chapter4, @chapter5, @chapter6, @chapter7, @chapter8, @chapter9, @afterword, @appendices]
+  end
 
 end
 
-
+def get_module(url)
+  if url=="solarsystem"
+    SolSys
+  end
+end
 
 before do
   cache_control :public, :max_age => 21600 if ENV['RACK_ENV']=="production"
-  @chapters = SolSys::CHAPTERS
-  @book = "solarsystem"
 end
 
 get '/tsoy' do
@@ -117,35 +122,38 @@ get '/tsoy' do
   haml :worldofnear
 end
 
-get '/solarsystem/onepage' do
-  @title = "The Solar System"
+get '/:book/onepage' do |book|
+  @book = get_module(book)
+  @title = @book.title
   haml :onepage
 end
 
-get "/solarsystem/:chapter" do |chap_name|
+get "/:book/:chapter" do |book, chap_name|
+  @book = get_module(book)
   @title = chap_name.humanize
-  i = @chapters.find_index{|o| o.name == @title }
+  i = @book.chapters.find_index{|o| o.name == @title }
   if i
-    @chapter = @chapters[i]
-    @page_left = i==0 ? nil : @chapters[i-1].name
+    @chapter = @book.chapters[i]
+    @page_left = i==0 ? nil : @book.chapters[i-1].name
     begin
-      @page_right = @chapters[i+1].name
+      @page_right = @book.chapters[i+1].name
     rescue NoMethodError
       @page_right = nil
     end
 
-    haml :chapter, {:locals=>{:chapter=>@chapters[i]}}
+    haml :chapter
   else
-    redirect to("/solarsystem")
+    redirect to("/#{book}")
   end
 end
 
-get '/solarsystem' do
-  haml :toc, {:locals=>{:chapter=>SolSys::TOC}}
+get '/:book' do |book|
+  @book = get_module(book)
+  haml :toc
 end
 
-get "/solarsystem/" do
-  redirect to("/solarsystem")
+get "/:book/" do |book|
+  redirect to("/#{book}")
 end
 
 get '/' do
