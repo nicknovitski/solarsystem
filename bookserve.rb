@@ -147,6 +147,7 @@ end
 
 get '/:book' do |book|
   @book = get_module(book)
+  @title = @book.title
   haml :toc
 end
 
