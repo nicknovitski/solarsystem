@@ -12,8 +12,8 @@ end
 
 Struct.new("Chapter", :name, :sections)
 
-FOREWORD = Struct::Chapter.new("Foreword")
 TOC = Struct::Chapter.new("Table of Contents")
+FOREWORD = Struct::Chapter.new("Foreword")
 CHAPTER1 = Struct::Chapter.new("Starting a Game", ["Choosing a Setting",
                                                    "Focal Points",
                                                    "Overview of the Game",
@@ -90,7 +90,6 @@ AFTERWORD = Struct::Chapter.new("Afterword")
 APPENDICES= Struct::Chapter.new("Appendices", ["Example Abilities", "Example Keys", "Example Secrets"])
 
 CHAPTERS = [FOREWORD,
-            TOC,
             CHAPTER1,
             CHAPTER2,
             CHAPTER3,
@@ -105,6 +104,7 @@ CHAPTERS = [FOREWORD,
 
 before do
   cache_control :public, :max_age => 21600 if ENV['RACK_ENV']=="production"
+  @chapters = CHAPTERS
 end
 
 get '/world-of-near' do
@@ -113,13 +113,11 @@ get '/world-of-near' do
 end
 
 get '/onepage' do
-  @chapters = CHAPTERS
   @title = "The Solar System"
   haml :solarsystem
 end
 
 get "/:chapter" do |chap_name|
-  @chapters = CHAPTERS
   @title = chap_name.humanize
   i = @chapters.find_index{|o| o.name == @title }
   if i
@@ -138,5 +136,5 @@ get "/:chapter" do |chap_name|
 end
 
 get '/' do
-  redirect to('/foreword')
+  haml :chapter, {:locals=>{:chapter=>TOC}}
 end

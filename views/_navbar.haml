@@ -3,7 +3,7 @@
     .container
       %a.btn.btn-navbar{:data=>{:toggle=>"collapse", :target=>".nav-collapse"}}
         %img{:src=>"img/favicon.ico"}
-      %a.brand
+      %a.brand{:href=>"/"}
         %img{:alt => "The Solar System", :height => "50", :src => "img/sslogo50px.png", :width => "120"}/
       .nav-collapse
         %ul.nav
@@ -13,6 +13,3 @@
             - @chapter.sections.each do |section|
               %li<
                 %a{:href=>'#'+section.snake_case}= section
-        %ul.nav.pull-right
-          %li
-            %a.btn.btn-navbar{:href=>"/table-of-contents"}< Table of Contents
