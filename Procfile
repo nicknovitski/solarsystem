@@ -1,1 +1,1 @@
-web: bundle exec ruby ss.rb -p $PORT
+web: bundle exec ruby bookserve.rb -p $PORT
