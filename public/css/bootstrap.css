@@ -97,7 +97,7 @@ textarea {
 body {
   margin: 0;
   font-family: "lucida grande", "lucida sans unicode", sans-serif;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.61em;
   color: #111111;
   background-color: #FFFEF0;
@@ -276,12 +276,12 @@ a:hover {
 p {
   margin: 0 0 0.805em;
   font-family: "lucida grande", "lucida sans unicode", sans-serif;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.61em;
   text-indent: 1.625em;
 }
 p small {
-  font-size: 16px;
+  font-size: 17px;
   color: #999999;
 }
 .lead {
@@ -473,7 +473,7 @@ cite {
 code, pre {
   padding: 0 3px 2px;
   font-family: Menlo, Monaco, "Courier New", monospace;
-  font-size: 17px;
+  font-size: 18px;
   color: #333333;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -521,7 +521,7 @@ legend {
   width: 100%;
   padding: 0;
   margin-bottom: 2.415em;
-  font-size: 27px;
+  font-size: 28.5px;
   line-height: 3.22em;
   color: #333333;
   border: 0;
@@ -533,7 +533,7 @@ button,
 select,
 textarea {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: normal;
   line-height: 1.61em;
 }
@@ -551,7 +551,7 @@ select,
   height: 1.61em;
   padding: 4px;
   margin-bottom: 9px;
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.61em;
   color: #555555;
   border: 1px solid #ccc;
@@ -1739,7 +1739,7 @@ table .span12 {
 }
 .btn-large {
   padding: 9px 14px;
-  font-size: 20px;
+  font-size: 21px;
   line-height: normal;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -1750,7 +1750,7 @@ table .span12 {
 }
 .btn-small {
   padding: 5px 9px;
-  font-size: 16px;
+  font-size: 17px;
   line-height: -0.3899999999999999em;
 }
 .btn-small .icon {
@@ -3065,7 +3065,7 @@ a.thumbnail:hover {
 }
 .label {
   padding: 1px 3px 2px;
-  font-size: 13.5px;
+  font-size: 14.25px;
   font-weight: bold;
   color: #ffffff;
   text-transform: uppercase;
