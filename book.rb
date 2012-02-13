@@ -1,7 +1,16 @@
 class Chapter
   attr_reader :name, :sections
-  def initialize (title, sections=nil)
-    @name, @sections = title, sections
+  def initialize(title, sections=nil, &block)
+    @name = title
+    if block_given?
+      @sections = []
+      instance_eval &block
+    else
+      @sections = sections
+    end
+  end
+  def section(title)
+    @sections << title
   end
 end
 
@@ -27,8 +36,8 @@ class Book
   def self.chapters
     @chapters
   end
-  def self.chapter(title, sections=nil)
+  def self.chapter(title, sections=nil, &block)
     @chapters ||= []
-    @chapters << Chapter.new(title, sections)
+    @chapters << Chapter.new(title, sections, &block)
   end
 end
