@@ -12,14 +12,11 @@ class String
   end
 end
 
-Struct.new("Chapter", :name, :sections)
-
+require_relative 'book'
 require_relative 'solarsystem'
 require_relative 'tsoy'
 
-
-
-def get_module(url)
+def get_const(url)
   Kernel.const_get url.capitalize
 end
 
@@ -28,13 +25,13 @@ before do
 end
 
 get '/:book/onepage' do |book|
-  @book = get_module(book)
+  @book = get_const(book)
   @title = @book.title
   haml :onepage
 end
 
 get "/:book/:chapter" do |book, chap_name|
-  @book = get_module(book)
+  @book = get_const(book)
   @title = chap_name.humanize
   i = @book.chapters.find_index{|o| o.name == @title }
   if i
@@ -54,7 +51,7 @@ get "/:book/:chapter" do |book, chap_name|
 end
 
 get '/:book' do |book|
-  @book = get_module(book)
+  @book = get_const(book)
   @title = @book.title
   haml :toc
 end
