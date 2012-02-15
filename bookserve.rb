@@ -61,5 +61,6 @@ get "/:book/" do |book|
 end
 
 get '/' do
-  redirect to('/solarsystem')
+  @books = Book.all
+  haml :shelf
 end

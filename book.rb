@@ -15,6 +15,7 @@ class Chapter
 end
 
 class Book
+  @descendants = []
   def self.title(title)
     @title = title
     def self.title
@@ -39,5 +40,11 @@ class Book
   def self.chapter(title, sections=nil, &block)
     @chapters ||= []
     @chapters << Chapter.new(title, sections, &block)
+  end
+  def self.inherited(child)
+    @descendants << child
+  end
+  def self.all
+    @descendants
   end
 end

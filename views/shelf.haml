@@ -1,0 +1,5 @@
+%ul.unstyled
+  - @books.each do |b|
+    %li
+      %a{:href=>"/#{b.url}"}
+        %img{:alt => b.title, :height => "210", :src => "/img/#{b.url}logolarge.png", :title => "", :width => "500"}/
