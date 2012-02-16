@@ -1,5 +1,5 @@
 class Tsoy < Book
-  title "The World of Near"
+  title "The Shadow of Yesterday"
   url "tsoy"
   credit "Arkenstone Press 2009"
 
