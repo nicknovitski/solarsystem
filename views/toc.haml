@@ -1,4 +1,10 @@
 %section#table-of-contents
+  %ul.breadcrumb
+    %li
+      %a{:href=>"/"} Bookshelf
+      %span.divider /
+    %li.active
+      %a{:href=>"/#{@book.url}"}=@book.title
   = haml :_license
   %h1 Table of Contents
   %ol
