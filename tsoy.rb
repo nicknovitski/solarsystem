@@ -3,17 +3,17 @@ class Tsoy < Book
   url "tsoy"
   credit "Arkenstone Press 2009"
 
-  chapter "Front Matter" do
-    section "Introduction"
-    section "Campaigning"
-    section "Abilities"
-    section "Secrets"
-    section "Keys"
-    section "Equipment"
-  end
-
   chapter "UNDER CONSTRUCTION"
 
+  #chapter "Front Matter" do
+  #  section "Introduction"
+  #  section "Campaigning"
+  #  section "Abilities"
+  #  section "Secrets"
+  #  section "Keys"
+  #  section "Equipment"
+  #end
+  #
   #chapter "The Shorter Near" do
   #  section "Near"
   #  section "Maldor"
